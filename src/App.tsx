@@ -135,7 +135,7 @@ interface AnalysisResult {
   }>;
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.VITE_GEMINI_API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 // --- Firebase Initialization ---
 const app = initializeApp(firebaseConfig);
