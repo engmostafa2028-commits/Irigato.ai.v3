@@ -1,0 +1,31 @@
+{
+  "entities": {
+    "SavedDesign": {
+      "title": "Saved Irrigation Design",
+      "description": "A saved irrigation configuration for a specific farm plot.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "userId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "analysis": { "$ref": "AnalysisResult" },
+        "overrides": { "type": "object" }
+      },
+      "required": ["name", "userId", "createdAt", "updatedAt", "analysis", "overrides"]
+    },
+    "AnalysisResult": {
+      "title": "Analysis Result",
+      "description": "The full design data result",
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "firestore": {
+    "designs": {
+      "schema": "SavedDesign",
+      "description": "Collection of saved irrigation designs"
+    }
+  }
+}
